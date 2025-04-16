@@ -95,4 +95,21 @@ public class testController {
     public String test5(){
         return "test5";
     }
+
+    @PostMapping("/input5_result")
+    public String result5(@RequestParam("nums") int[] nums){
+            int odd=0;
+            int even=0;
+        System.out.println(nums[0]);
+
+            for(int i=0;i<nums.length;i++){
+                if(nums[i]%2==0) even++;
+                else odd++;
+            }
+
+        System.out.println("evenCnt "+even);
+        System.out.println("oddCnt "+odd);
+
+        return "result";
+    }
 }
