@@ -140,5 +140,20 @@ public class testController {
         return "result";
     }
 
+    @GetMapping("7")
+    public String test7(){
+
+            return "test7";
+    }
+
+    @PostMapping("/input7_result")
+    public String result7(@RequestParam("num") int num){
+
+            for(int i=num;i <10; i++){
+                System.out.println(num*i);
+            }
+
+            return "result";
+    }
 
 }
