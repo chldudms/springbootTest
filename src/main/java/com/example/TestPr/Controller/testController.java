@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.lang.Math.*;
+
 @Controller
 public class testController {
         @GetMapping("/")
@@ -112,4 +114,31 @@ public class testController {
 
         return "result";
     }
+
+    @GetMapping("6")
+    public String test6(){ return "test6"; }
+
+    @PostMapping("/input6_result")
+    public String result6(@RequestParam("num") int[] num){
+            int sum =0;
+            int avg = 0;
+
+        int max= Math.max(num[0], num[1]);
+        int min = Math.min(num[0],num[1]);
+
+        for(int i=min;i<=max;i++){
+            if(i%3==0||i%5==0){
+                sum+=i;
+                avg++;
+            }
+        }
+        avg = sum/avg;
+
+        System.out.println("sum:"+sum);
+        System.out.println("avg:"+avg);
+
+        return "result";
+    }
+
+
 }
